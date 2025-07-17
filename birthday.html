@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click to Open Envelope</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .lid, .envelope {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .lid {
+      border-right: 150px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-left: 150px solid transparent;
+      transform-origin: top;
+      transition: transform 0.25s linear;
+    }
+
+    .lid.one {
+
+
+      border-top: 100px solid #cdb4db ;
+      transform: rotateX(0deg);
+      z-index: 3;
+      transition-delay: 0.75s;
+    }
+
+    .lid.two {
+      border-top: 100px solid #ce9df2;
+      transform: rotateX(90deg);
+      z-index: 1;
+      transition-delay: 0.5s;
+    }
+
+    .envelope {
+      border-top: 100px solid transparent;
+      border-right: 150px solid #ffc8dd;
+      border-bottom: 100px solid #ffc8dd;
+      border-left: 150px solid #f3d1f4;
+      z-index: 3;
+    }
+
+    .letter {
+      position: absolute;
+      top: 0;
+      width: 80%;
+      height: 80%;
+      background-color: white;
+      border-radius: 15px;
+      z-index: 2;
+      transition: 0.5s;
+      transform: translateY(0);
+    }
+
+    .letter p {
+      text-align: center;
+      font-size: 30px;
+      margin-top: 30px;
+      color: #e0b0ff;
+    }
+
+    .opened .lid.one {
+      transform: rotateX(90deg);
+      transition-delay: 0s;
+    }
+
+    .opened .lid.two {
+      transform: rotateX(180deg);
+      transition-delay: 0.25s;
+    }
+
+    .opened .letter {
+      transform: translateY(-50px);
+      transition-delay: 0.5s;
+    }
+
+
+
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-200 via-pink-300 to-purple-300"> 
+  
+  <div class="wrapper relative h-[200px] w-[300px] bg-[#f3d1f4] flex justify-center z-0 cursor-pointer" onclick="openEnvelope(this)">
+
+
+    <div class="lid one"></div>
+    <div class="lid two"></div>
+    <div class="envelope"></div>
+    <div class="letter">
+      <p>Happy Birthday!</p>
+    </div>
+  </div>
+
+  <script>
+    function openEnvelope(el) {
+      el.classList.toggle('opened');
+    }
+  </script>
+</body>
+</html>
