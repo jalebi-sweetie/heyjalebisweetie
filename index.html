@@ -20,9 +20,9 @@
     }
 
     .lid {
-      border-right: 150px solid transparent;
-      border-bottom: 100px solid transparent;
-      border-left: 150px solid transparent;
+      border-right: 200px solid transparent;
+      border-bottom: 150px solid transparent;
+      border-left: 200px solid transparent;
       transform-origin: top;
       transition: transform 0.25s linear;
     }
@@ -30,7 +30,7 @@
     .lid.one {
 
 
-      border-top: 100px solid #cdb4db ;
+      border-top: 200px solid #cdb4db ;
       transform: rotateX(0deg);
       z-index: 3;
       transition-delay: 0.75s;
@@ -44,10 +44,10 @@
     }
 
     .envelope {
-      border-top: 100px solid transparent;
-      border-right: 150px solid #ffc8dd;
-      border-bottom: 100px solid #ffc8dd;
-      border-left: 150px solid #f3d1f4;
+      border-top: 150px solid transparent;
+      border-right: 200px solid #ffc8dd;
+      border-bottom: 150px solid #ffc8dd;
+      border-left: 200px solid #f3d1f4;
       z-index: 3;
     }
 
@@ -97,7 +97,7 @@
 
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-200 via-pink-300 to-purple-300"> 
   
-  <div class="wrapper relative h-[200px] w-[300px] bg-[#f3d1f4] flex justify-center z-0 cursor-pointer" onclick="openEnvelope(this)">
+  <div class="wrapper relative h-[300px] w-[500px] bg-[#f3d1f4] flex justify-center z-0 cursor-pointer" onclick="openEnvelope(this)">
 
 
     <div class="lid one"></div>
@@ -115,3 +115,4 @@
   </script>
 </body>
 </html>
+
